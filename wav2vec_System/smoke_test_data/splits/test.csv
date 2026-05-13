@@ -1,0 +1,16 @@
+clip_id,file_path,language,split
+test_english_000,/Users/fredrikschultz/Documents/GitHub/Spoken-Language-Identification/wav2vec_System/smoke_test_data/audio/test_english_000.wav,english,test
+test_english_001,/Users/fredrikschultz/Documents/GitHub/Spoken-Language-Identification/wav2vec_System/smoke_test_data/audio/test_english_001.wav,english,test
+test_english_002,/Users/fredrikschultz/Documents/GitHub/Spoken-Language-Identification/wav2vec_System/smoke_test_data/audio/test_english_002.wav,english,test
+test_english_003,/Users/fredrikschultz/Documents/GitHub/Spoken-Language-Identification/wav2vec_System/smoke_test_data/audio/test_english_003.wav,english,test
+test_english_004,/Users/fredrikschultz/Documents/GitHub/Spoken-Language-Identification/wav2vec_System/smoke_test_data/audio/test_english_004.wav,english,test
+test_swedish_000,/Users/fredrikschultz/Documents/GitHub/Spoken-Language-Identification/wav2vec_System/smoke_test_data/audio/test_swedish_000.wav,swedish,test
+test_swedish_001,/Users/fredrikschultz/Documents/GitHub/Spoken-Language-Identification/wav2vec_System/smoke_test_data/audio/test_swedish_001.wav,swedish,test
+test_swedish_002,/Users/fredrikschultz/Documents/GitHub/Spoken-Language-Identification/wav2vec_System/smoke_test_data/audio/test_swedish_002.wav,swedish,test
+test_swedish_003,/Users/fredrikschultz/Documents/GitHub/Spoken-Language-Identification/wav2vec_System/smoke_test_data/audio/test_swedish_003.wav,swedish,test
+test_swedish_004,/Users/fredrikschultz/Documents/GitHub/Spoken-Language-Identification/wav2vec_System/smoke_test_data/audio/test_swedish_004.wav,swedish,test
+test_german_000,/Users/fredrikschultz/Documents/GitHub/Spoken-Language-Identification/wav2vec_System/smoke_test_data/audio/test_german_000.wav,german,test
+test_german_001,/Users/fredrikschultz/Documents/GitHub/Spoken-Language-Identification/wav2vec_System/smoke_test_data/audio/test_german_001.wav,german,test
+test_german_002,/Users/fredrikschultz/Documents/GitHub/Spoken-Language-Identification/wav2vec_System/smoke_test_data/audio/test_german_002.wav,german,test
+test_german_003,/Users/fredrikschultz/Documents/GitHub/Spoken-Language-Identification/wav2vec_System/smoke_test_data/audio/test_german_003.wav,german,test
+test_german_004,/Users/fredrikschultz/Documents/GitHub/Spoken-Language-Identification/wav2vec_System/smoke_test_data/audio/test_german_004.wav,german,test

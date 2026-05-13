@@ -1,0 +1,16 @@
+clip_id,file_path,language,split
+train_english_000,/Users/fredrikschultz/Documents/GitHub/Spoken-Language-Identification/wav2vec_System/smoke_test_data/audio/train_english_000.wav,english,train
+train_english_001,/Users/fredrikschultz/Documents/GitHub/Spoken-Language-Identification/wav2vec_System/smoke_test_data/audio/train_english_001.wav,english,train
+train_english_002,/Users/fredrikschultz/Documents/GitHub/Spoken-Language-Identification/wav2vec_System/smoke_test_data/audio/train_english_002.wav,english,train
+train_english_003,/Users/fredrikschultz/Documents/GitHub/Spoken-Language-Identification/wav2vec_System/smoke_test_data/audio/train_english_003.wav,english,train
+train_english_004,/Users/fredrikschultz/Documents/GitHub/Spoken-Language-Identification/wav2vec_System/smoke_test_data/audio/train_english_004.wav,english,train
+train_swedish_000,/Users/fredrikschultz/Documents/GitHub/Spoken-Language-Identification/wav2vec_System/smoke_test_data/audio/train_swedish_000.wav,swedish,train
+train_swedish_001,/Users/fredrikschultz/Documents/GitHub/Spoken-Language-Identification/wav2vec_System/smoke_test_data/audio/train_swedish_001.wav,swedish,train
+train_swedish_002,/Users/fredrikschultz/Documents/GitHub/Spoken-Language-Identification/wav2vec_System/smoke_test_data/audio/train_swedish_002.wav,swedish,train
+train_swedish_003,/Users/fredrikschultz/Documents/GitHub/Spoken-Language-Identification/wav2vec_System/smoke_test_data/audio/train_swedish_003.wav,swedish,train
+train_swedish_004,/Users/fredrikschultz/Documents/GitHub/Spoken-Language-Identification/wav2vec_System/smoke_test_data/audio/train_swedish_004.wav,swedish,train
+train_german_000,/Users/fredrikschultz/Documents/GitHub/Spoken-Language-Identification/wav2vec_System/smoke_test_data/audio/train_german_000.wav,german,train
+train_german_001,/Users/fredrikschultz/Documents/GitHub/Spoken-Language-Identification/wav2vec_System/smoke_test_data/audio/train_german_001.wav,german,train
+train_german_002,/Users/fredrikschultz/Documents/GitHub/Spoken-Language-Identification/wav2vec_System/smoke_test_data/audio/train_german_002.wav,german,train
+train_german_003,/Users/fredrikschultz/Documents/GitHub/Spoken-Language-Identification/wav2vec_System/smoke_test_data/audio/train_german_003.wav,german,train
+train_german_004,/Users/fredrikschultz/Documents/GitHub/Spoken-Language-Identification/wav2vec_System/smoke_test_data/audio/train_german_004.wav,german,train
