@@ -1,0 +1,7 @@
+datasets
+torch
+torchaudio
+pandas
+tqdm
+soundfile
+librosa

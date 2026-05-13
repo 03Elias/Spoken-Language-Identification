@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Large audio/data files
+data/raw/
+data/processed/
+
+# Keep metadata csv files
+!data/metadata/
+!data/metadata/*.csv
+
+# Logs
+logs/
+*.log
+
+# OS / editor
+.DS_Store
+.vscode/
