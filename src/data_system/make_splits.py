@@ -6,6 +6,7 @@ from tqdm import tqdm
 
 from preprocess_audio import preprocess_file_with_librosa, check_audio_file
 
+
 LANGUAGES = [
     "en",
     "sv",
@@ -47,13 +48,10 @@ def prepare_split(
 ):
     """
     Prepare one split for one language.
-
-    Example:
-    lang_code = "sv"
-    split_name = "train"
-    tsv_filename = "train.tsv"
-    n_samples = 500
     """
+
+    if n_samples == 0:
+        return []
 
     lang_raw_dir = Path(raw_root) / lang_code
     clips_dir = lang_raw_dir / "clips"
@@ -87,16 +85,15 @@ def prepare_split(
 
         try:
             saved_path = preprocess_file_with_librosa(
-            input_path=input_path,
-            output_path=output_path,
-)
-            
+                input_path=input_path,
+                output_path=output_path,
+            )
 
             check_audio_file(saved_path)
 
             rows.append(
                 {
-                    "path": saved_path,
+                    "path": str(saved_path),
                     "language": lang_code,
                     "split": split_name,
                     "sentence": row.get("sentence", ""),
@@ -131,7 +128,6 @@ def prepare_language(
     """
     Prepare train, validation and test splits for one language.
     """
-
     all_rows = []
 
     split_settings = {
@@ -164,7 +160,11 @@ def save_metadata(metadata, metadata_root):
     metadata.to_csv(metadata_root / "all_metadata.csv", index=False)
 
     for split in ["train", "val", "test"]:
-        split_df = metadata[metadata["split"] == split]
+        if "split" in metadata.columns:
+            split_df = metadata[metadata["split"] == split]
+        else:
+            split_df = pd.DataFrame()
+
         split_df.to_csv(metadata_root / f"{split}.csv", index=False)
 
     print("\nSaved metadata files:")
@@ -178,6 +178,10 @@ def print_summary(metadata):
     """
     Print summary for checking the dataset balance.
     """
+    if metadata.empty:
+        print("\nNo samples were prepared.")
+        return
+
     print("\nDataset summary:")
     print(metadata.groupby(["split", "language"]).size())
 
@@ -199,6 +203,10 @@ def main():
     parser.add_argument("--metadata_root", default="data/metadata")
     parser.add_argument("--languages", nargs="+", default=None)
 
+    parser.add_argument("--n_train", type=int, default=None)
+    parser.add_argument("--n_val", type=int, default=None)
+    parser.add_argument("--n_test", type=int, default=None)
+
     args = parser.parse_args()
 
     if args.languages is not None:
@@ -216,6 +224,15 @@ def main():
         n_train = 500
         n_val = 100
         n_test = 100
+
+    if args.n_train is not None:
+        n_train = args.n_train
+
+    if args.n_val is not None:
+        n_val = args.n_val
+
+    if args.n_test is not None:
+        n_test = args.n_test
 
     all_rows = []
 
