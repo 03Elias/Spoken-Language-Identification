@@ -25,9 +25,12 @@ MODEL_NAME = "facebook/wav2vec2-base-960h"
 SAMPLE_RATE = 16000
 EMBED_DIM = 768
 
+BASE_DIR = Path(__file__).resolve().parent
+PROJECT_ROOT = BASE_DIR.parent.parent
+
 # Paths — adjust to match the group's agreed folder structure
-SPLITS_DIR = "data/metadata"
-OUTPUT_DIR = "../outputs"
+SPLITS_DIR = PROJECT_ROOT / "src" / "data" / "metadata"
+OUTPUT_DIR = PROJECT_ROOT / "outputs"
 
 
 def load_model(device):
@@ -45,6 +48,16 @@ def load_model(device):
 
 def extract_embedding(audio_path, processor, model, device):
     """Extract a single 768-dim mean-pooled embedding from one audio file."""
+    audio_path = Path(audio_path)
+    if not audio_path.exists():
+        resolved_path = PROJECT_ROOT / audio_path
+        if resolved_path.exists():
+            audio_path = resolved_path
+        else:
+            src_resolved_path = PROJECT_ROOT / "src" / audio_path
+            if src_resolved_path.exists():
+                audio_path = src_resolved_path
+
     audio, sr = librosa.load(audio_path, sr=SAMPLE_RATE)
     inputs = processor(
         audio,
@@ -81,7 +94,7 @@ def main():
     os.makedirs(OUTPUT_DIR, exist_ok=True)
 
     # Load split CSV
-    csv_path = os.path.join(SPLITS_DIR, f"{args.split}.csv")
+    csv_path = SPLITS_DIR / f"{args.split}.csv"
     df = pd.read_csv(csv_path)
     print(f"Loaded {len(df)} clips from {csv_path}")
 
@@ -128,9 +141,9 @@ def main():
         print(f"\nWarning: {len(failed)} clips failed extraction: {failed[:5]}...")
 
     # Save
-    emb_path = os.path.join(OUTPUT_DIR, f"embeddings_{args.split}.npy")
-    lbl_path = os.path.join(OUTPUT_DIR, f"labels_{args.split}.npy")
-    id_path = os.path.join(OUTPUT_DIR, f"clip_ids_{args.split}.npy")
+    emb_path = OUTPUT_DIR / f"embeddings_{args.split}.npy"
+    lbl_path = OUTPUT_DIR / f"labels_{args.split}.npy"
+    id_path = OUTPUT_DIR / f"clip_ids_{args.split}.npy"
 
     np.save(emb_path, embeddings)
     np.save(lbl_path, np.array(labels))

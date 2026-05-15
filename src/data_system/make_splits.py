@@ -8,16 +8,11 @@ from preprocess_audio import preprocess_file_with_librosa, check_audio_file
 
 
 LANGUAGES = [
-    "en",
+    "pt",
     "sv",
-    "de",
-    "fr",
+    "no",
     "es",
-    "ar",
-    "zh",
-    "ru",
-    "ja",
-    "fi",
+    "ar"
 ]
 
 

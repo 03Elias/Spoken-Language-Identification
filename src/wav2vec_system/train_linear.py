@@ -14,9 +14,11 @@ import joblib
 from sklearn.linear_model import LogisticRegression
 from sklearn.preprocessing import LabelEncoder
 from sklearn.metrics import accuracy_score, classification_report
+from pathlib import Path
 
 
-OUTPUT_DIR = "../outputs"
+BASE_DIR = Path(__file__).resolve().parent
+OUTPUT_DIR = BASE_DIR.parent.parent / "outputs"
 
 
 def main():
