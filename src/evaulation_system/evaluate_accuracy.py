@@ -17,6 +17,11 @@ from sklearn.metrics import accuracy_score
 
 REQUIRED_COLUMNS = {"true_label", "predicted_label"}
 TIME_COLUMN_CANDIDATES = (
+    "classifier_inference_time_seconds",
+    "classifier_inference_time_sec",
+    "classifier_inference_time",
+    "end_to_end_inference_time_seconds",
+    "feature_extraction_time_seconds",
     "inference_time",
     "inference_time_sec",
     "inference_time_seconds",

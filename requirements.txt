@@ -1,7 +1,33 @@
-datasets
+# Core scientific computing
+numpy
+scipy
+pandas
+
+# Audio processing
+librosa
+soundfile
+audioread
+
+# Machine learning
+scikit-learn
+joblib
+
+# Deep learning
 torch
 torchaudio
-pandas
+transformers
+
+# Visualization
+matplotlib
+seaborn
+
+# Progress bars
 tqdm
-soundfile
-librosa
+
+# Utilities
+python-dateutil
+pyarrow
+
+
+jupyter
+ipykernel
